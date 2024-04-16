@@ -1,4 +1,4 @@
-package myGoRepo
+package MyUniRepo
 
 type Query struct {
 	Filters    []Filter

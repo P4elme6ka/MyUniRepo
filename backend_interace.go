@@ -1,4 +1,4 @@
-package myGoRepo
+package MyUniRepo
 
 type IBackendRepo[T any] interface {
 	SetRecord(rec Record[T]) error

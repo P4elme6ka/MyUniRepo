@@ -1,4 +1,4 @@
-package myGoRepo
+package MyUniRepo
 
 type Attributes map[AttributeName]AttributeValue
 

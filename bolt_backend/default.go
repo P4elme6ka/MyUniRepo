@@ -1,4 +1,4 @@
-package bolt_local
+package bolt_backend
 
 import (
 	"encoding/json"
