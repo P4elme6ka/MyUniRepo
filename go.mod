@@ -1,4 +1,4 @@
-module myGoRepo
+module github.com/P4elme6ka/MyUniRepo
 
 go 1.19
 
