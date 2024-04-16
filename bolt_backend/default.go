@@ -3,16 +3,15 @@ package bolt_backend
 import (
 	"encoding/json"
 	"errors"
-	"github.com/P4elme6ka/my_awesome_vpn/repository"
-	"github.com/P4elme6ka/my_awesome_vpn/repository/repository_query"
+	"github.com/P4elme6ka/MyUniRepo"
 	"github.com/boltdb/bolt"
 	"github.com/google/uuid"
 	"reflect"
 	"sort"
 )
 
-func GenericSet[T repository.IModel](db *bolt.DB, value T) error {
-	err := db.Update(func(tx *bolt.Tx) error {
+func (b BoltBackend[T]) SetRecord(rec MyUniRepo.Record[T]) error {
+	err := b.db.Update(func(tx *bolt.Tx) error {
 		bucket, err := tx.CreateBucketIfNotExists(value.GetBucket())
 		if err != nil {
 			return err
@@ -35,6 +34,31 @@ func GenericSet[T repository.IModel](db *bolt.DB, value T) error {
 		return nil
 	})
 	return err
+}
+
+func (b BoltBackend[T]) GetRecord(query MyUniRepo.Query) (*T, error) {
+	//TODO implement me
+	panic("implement me")
+}
+
+func (b BoltBackend[T]) DeleteRecord(query MyUniRepo.Query) error {
+	//TODO implement me
+	panic("implement me")
+}
+
+func (b BoltBackend[T]) UpdateAllRecord(query MyUniRepo.Query, rec MyUniRepo.Record[T]) error {
+	//TODO implement me
+	panic("implement me")
+}
+
+func (b BoltBackend[T]) UpdateFirstRecord(query MyUniRepo.Query, rec MyUniRepo.Record[T]) error {
+	//TODO implement me
+	panic("implement me")
+}
+
+func (b BoltBackend[T]) QueryRecord(query MyUniRepo.Query) ([]*T, error) {
+	//TODO implement me
+	panic("implement me")
 }
 
 func GenericGet[T repository.IModel](db *bolt.DB, uuid uuid.UUID) (*T, error) {
